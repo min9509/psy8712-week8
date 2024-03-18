@@ -1,13 +1,11 @@
 ---
-title: "PSY 8712 Week 8 Project"
+title: '"PSY 8712 Week 8 Project"'
 author: "Minjeong Seo"
-date: "2024-03-18"
-output: html_document
+date: "`r Sys.Date()`"
+output: 
+  html_document:
+    df_print: paged
 ---
-
-```{r setup, include=FALSE}
-knitr::opts_chunk$set(echo = TRUE)
-```
 
 ## R Markdown
 
