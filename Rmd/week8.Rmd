@@ -51,4 +51,9 @@ This chunk is used to obtain the correlation between mean Q1-Q6 and mean Q8-Q10.
 cor.test(week8_tbl$meanQ1_6, week8_tbl$meanQ8_10)
 ```
 
-
+# **Data Export**
+This chunk is used to export data. 
+```{r export}
+week8_tbl %>% 
+  saveRDS(file = "../shiny_week8/week8_data.rds")
+```
