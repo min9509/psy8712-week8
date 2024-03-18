@@ -45,3 +45,10 @@ week8_tbl %>%
   labs(x = "Average scores of Q1 ~ Q6", y = "Average scores of Q8 ~ Q10")
 ```
 
+# **Analysis**
+This chunk is used to obtain the correlation between mean Q1-Q6 and mean Q8-Q10. I observed a correlation of `r format(round(cor(week8_tbl$meanQ1_6, week8_tbl$meanQ8_10), 2), nsmall = 0)`, but the p-value is 0.56, which means it is not significant.
+```{r analysis}
+cor.test(week8_tbl$meanQ1_6, week8_tbl$meanQ8_10)
+```
+
+
