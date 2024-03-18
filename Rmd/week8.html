@@ -1634,6 +1634,14 @@ display: none;
 by <a href="https://mybinder.org/v2/gh/min9509/psy8712-week8/HEAD">clicking
 this link</a>. An interactive web app is available by <a href="add%20shiny%20app">clicking this link instead</a>.</p>
 </div>
+<div id="script-settings-and-resources" class="section level1">
+<h1><strong>Script Settings and Resources</strong></h1>
+<p>I used message to suppress all output from a chunk but display a copy
+of the executed code. Just because message suppress any informational
+messages.</p>
+<pre class="r"><code>setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+library(tidyverse)</code></pre>
+</div>
 
 
 

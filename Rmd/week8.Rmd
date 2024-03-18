@@ -10,3 +10,10 @@ output:
 # **Reproducible Image and Online Resources**
 An image of this project as of *"`r Sys.Date()`"* can be accessed by [clicking this link](https://mybinder.org/v2/gh/min9509/psy8712-week8/HEAD).
 An interactive web app is available by [clicking this link instead](add shiny app).
+
+# **Script Settings and Resources**
+I used message to suppress all output from a chunk but display a copy of the executed code. Just because message suppress any informational messages.
+```{r setup, message=FALSE}
+setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
+library(tidyverse)
+```
