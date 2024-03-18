@@ -18,13 +18,30 @@ setwd(dirname(rstudioapi::getActiveDocumentContext()$path))
 library(tidyverse)
 ```
 
-# ***Data Import and Cleaning**
-
+# **Data Import and Cleaning**
+This chunk is for importing and cleaning data. I used read_csv to import data, mutate to change data types, and rowwise with mutate and mean to prepare section 4.
 ```{r import date}
 week8_tbl <- read_csv("../data/week3.csv") %>%
   mutate(q5 = 6 - q5) %>%
   mutate(timeStart = ymd_hms(timeStart)) %>%
   mutate(timeEnd = ymd_hms(timeEnd)) %>%
   mutate(condition = factor(condition, levels = c("A", "B", "C"), labels = c("Block A", "Block B", "Control"))) %>%
-  mutate(gender = factor(gender, levels = c("M", "F"), labels = c("Male", "Female")))  
+  mutate(gender = factor(gender, levels = c("M", "F"), labels = c("Male", "Female"))) %>%
+  rowwise() %>%
+  mutate(meanQ1_6 = mean(c(q1, q2, q3, q4, q5, q6))) %>%
+  mutate(meanQ8_10 = mean(c(q8, q9, q10))) 
 ```
+
+# **Visualization**
+This chunk is for visualizing the table (Q1~Q6) and the scatter plot (mean Q1-Q6 and mean Q8-Q10) with the OLS regression line. To visualize the table and plot, I used the select function with df_print in the YAML and ggplot with geom_point(to make the scatter plot) and geom_smooth(to add OLS regression line) .
+```{r visualization}
+week8_tbl %>%
+  select(q1:q6)
+
+week8_tbl %>%
+  ggplot(aes(x = meanQ1_6, y = meanQ8_10)) +
+  geom_point() +
+  geom_smooth(method = "lm", color = "purple") +
+  labs(x = "Average scores of Q1 ~ Q6", y = "Average scores of Q8 ~ Q10")
+```
+
