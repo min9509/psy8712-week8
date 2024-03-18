@@ -5,7 +5,7 @@ account: min9509
 server: shinyapps.io
 hostUrl: https://api.shinyapps.io/v1
 appId: 11515430
-bundleId: 8384300
+bundleId: 8386141
 url: https://min9509.shinyapps.io/shiny_week8/
 version: 1
 asMultiple: FALSE
