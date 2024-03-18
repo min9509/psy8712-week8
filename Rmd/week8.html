@@ -1630,9 +1630,10 @@ display: none;
 
 <div id="reproducible-image-and-online-resources" class="section level1">
 <h1><strong>Reproducible Image and Online Resources</strong></h1>
-<p>An image of this project as of <em>“2024-03-18”</em> can be accessed
-by <a href="https://mybinder.org/v2/gh/min9509/psy8712-week8/HEAD">clicking
-this link</a>. An interactive web app is available by <a href="add%20shiny%20app">clicking this link instead</a>.</p>
+<p>An image of this project as of <em>2024-03-18</em> can be accessed by
+<a href="https://mybinder.org/v2/gh/min9509/psy8712-week8/HEAD">clicking
+this link</a>. An interactive web app is available by <a href="https://min9509.shinyapps.io/shiny_week8/">clicking this link
+instead</a>.</p>
 </div>
 <div id="script-settings-and-resources" class="section level1">
 <h1><strong>Script Settings and Resources</strong></h1>
@@ -1691,7 +1692,8 @@ add OLS regression line) .</p>
 <div id="analysis" class="section level1">
 <h1><strong>Analysis</strong></h1>
 <p>This chunk is used to obtain the correlation between mean Q1-Q6 and
-mean Q8-Q10. I observed a correlation of 0.08</p>
+mean Q8-Q10. I observed a correlation of 0.08, but the p-value is 0.56,
+which means it is not significant.</p>
 <pre class="r"><code>cor.test(week8_tbl$meanQ1_6, week8_tbl$meanQ8_10)</code></pre>
 <pre><code>## 
 ##  Pearson&#39;s product-moment correlation
@@ -1704,6 +1706,12 @@ mean Q8-Q10. I observed a correlation of 0.08</p>
 ## sample estimates:
 ##        cor 
 ## 0.08474575</code></pre>
+</div>
+<div id="data-export" class="section level1">
+<h1><strong>Data Export</strong></h1>
+<p>This chunk is used to export data.</p>
+<pre class="r"><code>week8_tbl %&gt;% 
+  saveRDS(file = &quot;../shiny_week8/week8_data.rds&quot;)</code></pre>
 </div>
 
 
